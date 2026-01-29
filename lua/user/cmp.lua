@@ -92,6 +92,7 @@ cmp.setup {
       "s",
     }),
   },
+
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
@@ -109,8 +110,8 @@ cmp.setup {
     end,
   },
   sources = {
-    { name = "nvim-lua" },
-    { name = "nvim-lsp"},
+    { name = "nvim_lua" },
+    { name = "nvim_lsp"},
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },

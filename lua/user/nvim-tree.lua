@@ -47,10 +47,10 @@ nvim_tree.setup({
   diagnostics = {
     enable = true,
     icons = {
-      hint = "🛈",
-      info = "⍰",
-      warning = "🛈",
-      error = "ⓧ",
+      hint = "H",
+      info = "I",
+      warning = "W",
+      error = "E",
     },
   },
 
@@ -61,9 +61,9 @@ nvim_tree.setup({
   },
 
   view = {
-    width = 30,
-    side = "left",
-    preserve_window_proportions = true,
+    width = 25,
+     side = "left",
+     preserve_window_proportions = true,
   },
 
   actions = {
@@ -81,8 +81,8 @@ nvim_tree.setup({
 
     icons = {
       show = {
-        file = true,
-        folder = true,
+       file = true,
+       folder = true,
         folder_arrow = true,
         git = true,
       },
@@ -96,6 +96,8 @@ nvim_tree.setup({
           empty = "🗂️",    -- Empty folder icon
           empty_open = "🗄️", -- Open empty folder icon
           symlink = "🔗",    -- Symlink folder icon
+          arrow_closed = "▶", -- or "▸"
+          arrow_open   = "▼", -- or "▾"
         },
 
         git = {

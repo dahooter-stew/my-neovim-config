@@ -45,14 +45,17 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs"
+  use 'nvim-lualine/lualine.nvim'
+  use "akinsho/toggleterm.nvim"
 
   -- Colorschemes      
   use "sainnhe/gruvbox-material"
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-  use 'kyazdani42/nvim-web-devicons.lua'
   use 'kyazdani42/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
+  use 'lukas-reineke/indent-blankline.nvim'
+  use "ray-x/lsp_signature.nvim"
 
   -- completions
   use "hrsh7th/nvim-cmp" 
@@ -70,7 +73,10 @@ return packer.startup(function(use)
   -- LSP 
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
+  use "WhoIsSethDaniel/mason-tool-installer.nvim"
   use "neovim/nvim-lspconfig"
+
+
 -- Telescope
   use "nvim-telescope/telescope.nvim"
 

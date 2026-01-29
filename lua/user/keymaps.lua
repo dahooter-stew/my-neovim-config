@@ -41,3 +41,5 @@ keymap("n", "<leader>f", "<cmd>lua require 'telescope.builtin'.find_files(requir
 keymap("n", "<C-t>", "<cmd>Telescope live_grep<CR>", opts)
 
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+
+keymap("n", "<leader>/", "<cmd>lua require('Comment').toggle()<CR>", opts)

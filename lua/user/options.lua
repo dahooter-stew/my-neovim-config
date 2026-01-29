@@ -37,7 +37,6 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-vim.opt.colorcolumn = "120"
 vim.opt.numberwidth = 2
 vim.opt.guifont = "monospace:h17"
 

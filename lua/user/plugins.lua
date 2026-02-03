@@ -47,6 +47,7 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs"
   use 'nvim-lualine/lualine.nvim'
   use "akinsho/toggleterm.nvim"
+  use "tpope/vim-commentary"
 
   -- Colorschemes      
   use "sainnhe/gruvbox-material"

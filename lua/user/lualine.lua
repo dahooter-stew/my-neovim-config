@@ -59,10 +59,6 @@ local progress = function()
 	return chars[index]
 end
 
-local spaces = function()
-	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
-end
-
 local component_separator = vim.fn.winwidth(0) > 80 and "|" or " "
 
 lualine.setup({

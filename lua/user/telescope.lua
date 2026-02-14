@@ -8,8 +8,10 @@ local actions = require "telescope.actions"
 telescope.setup {
   defaults = {
 
-    prompt_prefix = " ",
-    selection_caret = " ",
+    prompt_prefix = "🔍 ",      -- magnifying glass emoji
+    selection_caret = "➤ ",     -- arrow
+    entry_prefix = "  ",        -- optional spacing
+    color_devicons = false,
     path_display = { "smart" },
 
     mappings = {

@@ -38,4 +38,6 @@ vim.opt.isfname:append("@-@")
 vim.opt.numberwidth = 2
 vim.opt.guifont = "monospace:h17"
 
+vim.opt.guicursor = "i:block"
+
 vim.opt.winborder = "rounded"

@@ -8,6 +8,9 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+keymap("n", "<leader>w", ":wall<CR>", opts)
+keymap("n", "<leader>q", ":qall<CR>", opts)
+
 keymap("n", "<C-Left>", "<C-w>h", opts)
 keymap("n", "<C-Down>", "<C-w>j", opts)
 keymap("n", "<C-Up>", "<C-w>k", opts)

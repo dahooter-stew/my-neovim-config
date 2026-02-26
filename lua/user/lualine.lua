@@ -41,7 +41,6 @@ local branch = {
 local buffers = {
   "buffers",
   hide_filename_extension = true,
-  icons_enabled = false,
   mode = 2,
 }
 
@@ -57,6 +56,18 @@ local progress = function()
 	local line_ratio = current_line / total_lines
 	local index = math.ceil(line_ratio * #chars)
 	return chars[index]
+end
+
+local extension = function()
+  local full_path = vim.api.nvim_buf_get_name(0)
+  local filename = vim.fn.fnamemodify(full_path, ":t")
+
+  local ext = filename:match("%.([^.]+)$")
+  if ext then
+    return "." .. ext
+  else
+    return "" -- Return empty string if no extension found
+  end
 end
 
 local component_separator = vim.fn.winwidth(0) > 80 and "|" or " "
@@ -78,7 +89,7 @@ lualine.setup({
     lualine_b = {},
     lualine_c = { buffers },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { branch, diagnostics, filetype },
+		lualine_x = { branch, diagnostics, extension },
 		lualine_y = { location },
 		lualine_z = { progress },
 	},

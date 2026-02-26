@@ -40,7 +40,7 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-  -- My plugins here
+  -- misc
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
@@ -48,8 +48,9 @@ return packer.startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use "akinsho/toggleterm.nvim"
   use "tpope/vim-commentary"
+  use "sitiom/nvim-numbertoggle"
 
-  -- Colorschemes      
+  -- colorschemes      
   use "sainnhe/gruvbox-material"
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -57,6 +58,16 @@ return packer.startup(function(use)
   use 'nvim-tree/nvim-web-devicons'
   use 'lukas-reineke/indent-blankline.nvim'
   use "ray-x/lsp_signature.nvim"
+
+  -- markdown
+  use({
+      'MeanderingProgrammer/render-markdown.nvim',
+      after = { 'nvim-treesitter' },
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- if you prefer nvim-web-devicons
+      config = function()
+          require('render-markdown').setup({})
+      end,
+  })
 
   -- completions
   use "hrsh7th/nvim-cmp" 
@@ -76,7 +87,6 @@ return packer.startup(function(use)
   use "williamboman/mason-lspconfig.nvim"
   use "WhoIsSethDaniel/mason-tool-installer.nvim"
   use "neovim/nvim-lspconfig"
-
 
 -- Telescope
   use "nvim-telescope/telescope.nvim"

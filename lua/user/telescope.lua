@@ -11,7 +11,7 @@ telescope.setup {
     prompt_prefix = "🔍 ",      -- magnifying glass emoji
     selection_caret = "➤ ",     -- arrow
     entry_prefix = "  ",        -- optional spacing
-    color_devicons = false,
+    color_devicons = true,
     path_display = { "smart" },
 
     mappings = {

@@ -27,6 +27,7 @@ require("mason-lspconfig").setup({
     html,
     cssls,
     jdtls,
+    gdscript,
   },
   automatic_installation = true,
 })

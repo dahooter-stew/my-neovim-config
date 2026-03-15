@@ -42,6 +42,9 @@ local buffers = {
   "buffers",
   hide_filename_extension = true,
   mode = 2,
+  symbols = {
+    alternate_file = '',
+  }
 }
 
 local location = {

@@ -15,6 +15,7 @@ keymap("n", "<leader>h", ":nohl<CR>", opts)
 keymap("n", "<leader>f", "<cmd>lua require 'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>", opts)
 keymap("n", "<leader>t", "<cmd>Telescope live_grep<CR>", opts)
 keymap("n", "<leader>l", ":set wrap!<CR>", opts)
+keymap("n", "<leader>C", "<C-w>=", opts)
 
 keymap("n", "<A-h>", "<C-w>h", opts)
 keymap("n", "<A-j>", "<C-w>j", opts)
@@ -36,6 +37,7 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 keymap("i", "zx", "<ESC>", opts)
+keymap("v", "zx", "<ESC>", opts)
 
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
@@ -55,3 +57,26 @@ keymap("n", "<C-j>", "<C-e>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 keymap("n", "<leader>/", "<cmd>lua require('Comment').toggle()<CR>", opts)
+
+vim.api.nvim_create_user_command('GodotBreakpoint', function()
+  vim.cmd('normal! obreakpoint' )
+  vim.cmd('write' )
+end, {})
+vim.keymap.set('n', '<leader>b', ':GodotBreakpoint<CR>')
+
+-- delete all breakpoints in current file
+vim.api.nvim_create_user_command('GodotDeleteBreakpoints', function()
+  vim.cmd('g/breakpoint/d')
+end, {})
+vim.keymap.set('n', '<leader>BD', ':GodotDeleteBreakpoints<CR>')
+
+-- search all breakpoints in project
+vim.api.nvim_create_user_command('GodotFindBreakpoints', function()
+  vim.cmd(':grep breakpoint | copen')
+end, {})
+vim.keymap.set('n', '<leader>BF', ':GodotFindBreakpoints<CR>')
+
+-- append "# TRANSLATORS: " to current line
+vim.api.nvim_create_user_command('GodotTranslators', function(opts)
+  vim.cmd('normal! A # TRANSLATORS: ')
+end, {})

@@ -18,3 +18,5 @@ vim.lsp.config("lua_ls", {
   },
 })
 
+vim.lsp.config('gdscript', {})
+vim.lsp.enable('gdscript')

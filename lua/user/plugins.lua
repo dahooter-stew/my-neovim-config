@@ -52,6 +52,7 @@ return packer.startup(function(use)
 
   -- colorschemes      
   use "sainnhe/gruvbox-material"
+  use "loctvl842/monokai-pro.nvim"
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use 'kyazdani42/nvim-tree.lua'
@@ -89,7 +90,13 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig"
 
 -- Telescope
-  use "nvim-telescope/telescope.nvim"
+  use {
+  'nvim-telescope/telescope.nvim',
+  requires = {
+    {'nvim-lua/plenary.nvim'},
+    {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  }
+}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -10,6 +10,7 @@ require "user.nvim-tree"
 require "user.lualine"
 require "user.toggleterm"
 require "user.indentbackline"
+require "user.server"
 require "user.lsp"
 require "user.lsp-signature"
 

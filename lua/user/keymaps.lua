@@ -8,8 +8,10 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-keymap("n", "<leader>w", ":wall<CR>", opts)
-keymap("n", "<leader>q", ":qall<CR>", opts)
+keymap("n", "<leader>w", ":w<CR>", opts)
+keymap("n", "<leader>W", ":wall<CR>", opts)
+keymap("n", "<leader>q", ":q<CR>", opts)
+keymap("n", "<leader>Q", ":qall<CR>", opts)
 keymap("n", "<leader>v", ":vsp<CR>", opts)
 keymap("n", "<leader>h", ":nohl<CR>", opts)
 keymap("n", "<leader>f", "<cmd>lua require 'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>", opts)

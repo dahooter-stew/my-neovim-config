@@ -2,7 +2,7 @@ vim.cmd "colorscheme default"
 
 local colorscheme = "gruvbox-material"
 
-vim.g.gruvbox_material_background = "material"
+vim.g.gruvbox_material_background = "soft"
 vim.g.gruvbox_material_foreground = "material"
 vim.g.gruvbox_material_enable_bold = 1
 

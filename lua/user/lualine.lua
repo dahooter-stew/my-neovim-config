@@ -11,7 +11,7 @@ local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn" },
-	symbols = { error = "E ", warn = "W " },
+	symbols = { error = "⊗ ", warn = "⚠ " },
 	colored = true,
 	update_in_insert = false,
 	always_visible = true,
@@ -43,8 +43,10 @@ local buffers = {
   hide_filename_extension = true,
   mode = 2,
   symbols = {
-    alternate_file = '',
-  }
+    modified = ' ●',      -- Text to show when the buffer is modified
+    alternate_file = '#', -- Text to show to identify the alternate file
+    directory =  '',     -- Text to show when the buffer is a directory
+  },
 }
 
 local location = {
@@ -73,7 +75,8 @@ local extension = function()
   end
 end
 
-local component_separator = vim.fn.winwidth(0) > 80 and "|" or " "
+-- local component_separator = vim.fn.winwidth(0) > 80 and "|" or " "
+local component_separator = "|"
 
 lualine.setup({
 	options = {

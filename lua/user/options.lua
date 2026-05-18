@@ -18,8 +18,8 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
 
-vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 8
+-- vim.opt.scrolloff = 8
+-- vim.opt.sidescrolloff = 8
 vim.opt.signcolumn = "yes"
 
 vim.opt.cursorline = true
